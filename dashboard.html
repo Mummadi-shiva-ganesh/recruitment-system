@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="output.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> -->
+</head>
+<body class="bg-gray-100">
+    <!-- Sidebar -->
+    <div class="flex min-h-screen">
+        <nav class="bg-blue-500 w-64 p-6 flex flex-col justify-between">
+            <div>
+                <div class="text-white text-3xl font-bold mb-6">RecruitMe Admin</div>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="dashboard.html" class="text-white text-lg hover:bg-blue-600 p-2 rounded">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg hover:bg-blue-600 p-2 rounded">Job Postings</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg hover:bg-blue-600 p-2 rounded">Applicants</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-white text-lg hover:bg-blue-600 p-2 rounded">Settings</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="#" class="text-white text-lg hover:bg-blue-600 p-2 rounded">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="flex-grow p-6">
+            <h2 class="text-3xl font-bold mb-6">Dashboard</h2>
+            
+            <!-- Statistics Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <h3 class="text-2xl font-bold mb-2">150</h3>
+                    <p class="text-gray-600">Total Applicants</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <h3 class="text-2xl font-bold mb-2">12</h3>
+                    <p class="text-gray-600">Job Postings</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <h3 class="text-2xl font-bold mb-2">8</h3>
+                    <p class="text-gray-600">Open Positions</p>
+                </div>
+            </div>
+
+            <!-- Job Postings Management Section -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-semibold">Manage Job Postings</h3>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg">Add New Job</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full table-auto">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-4 py-2 text-left">Job Title</th>
+                                    <th class="px-4 py-2 text-left">Status</th>
+                                    <th class="px-4 py-2 text-left">Applications</th>
+                                    <th class="px-4 py-2 text-left">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-4 py-2">Software Engineer</td>
+                                    <td class="border px-4 py-2">Open</td>
+                                    <td class="border px-4 py-2">50</td>
+                                    <td class="border px-4 py-2">
+                                        <button class="text-blue-500 mr-2">Edit</button>
+                                        <button class="text-red-500">Delete</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2">Data Analyst</td>
+                                    <td class="border px-4 py-2">Closed</td>
+                                    <td class="border px-4 py-2">30</td>
+                                    <td class="border px-4 py-2">
+                                        <button class="text-blue-500 mr-2">Edit</button>
+                                        <button class="text-red-500">Delete</button>
+                                    </td>
+                                </tr>
+                                <!-- More jobs here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Applicants Section -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Recent Applicants</h3>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full table-auto">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="px-4 py-2 text-left">Name</th>
+                                    <th class="px-4 py-2 text-left">Email</th>
+                                    <th class="px-4 py-2 text-left">Position</th>
+                                    <th class="px-4 py-2 text-left">Resume</th>
+                                    <th class="px-4 py-2 text-left">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border px-4 py-2">John Doe</td>
+                                    <td class="border px-4 py-2">johndoe@example.com</td>
+                                    <td class="border px-4 py-2">Software Engineer</td>
+                                    <td class="border px-4 py-2"><a href="#" class="text-blue-500">Download</a></td>
+                                    <td class="border px-4 py-2">
+                                        <button class="text-green-500 mr-2">Approve</button>
+                                        <button class="text-red-500">Reject</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border px-4 py-2">Jane Smith</td>
+                                    <td class="border px-4 py-2">janesmith@example.com</td>
+                                    <td class="border px-4 py-2">Data Analyst</td>
+                                    <td class="border px-4 py-2"><a href="#" class="text-blue-500">Download</a></td>
+                                    <td class="border px-4 py-2">
+                                        <button class="text-green-500 mr-2">Approve</button>
+                                        <button class="text-red-500">Reject</button>
+                                    </td>
+                                </tr>
+                                <!-- More applicants here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

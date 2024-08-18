@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="output.css">
+    <title>Login page</title>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl md:text-3xl font-bold text-gray-800">RecruitMe</div>
+                <div class="space-x-4 hidden md:flex">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out">Home</a>
+                    <a href="jobs.html" class="text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out">Job Listings</a>
+                    <a href="apply.html" class="text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out">Apply Now</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button class="block md:hidden text-gray-600 focus:outline-none" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden bg-white" id="mobile-menu">
+            <a href="index.html" class="block text-gray-600 py-2 px-4 hover:bg-blue-500 hover:text-white">Home</a>
+            <a href="jobs.html" class="block text-gray-600 py-2 px-4 hover:bg-blue-500 hover:text-white">Job Listings</a>
+            <a href="apply.html" class="block text-gray-600 py-2 px-4 hover:bg-blue-500 hover:text-white">Apply Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-blue-500 py-16 md:py-20 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Join Our Team</h1>
+            <p class="text-base md:text-lg animate-fade-in-up">Discover exciting career opportunities at RecruitMe</p>
+            <a href="jobs.html" class="mt-8 inline-block bg-white text-blue-500 px-4 py-2 md:px-6 md:py-3 font-bold rounded-full hover:bg-blue-100 transition duration-300 ease-in-out animate-bounce mt-10">View Jobs</a>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10">About Us</h2>
+            <p class="text-center text-gray-600 text-base md:text-lg leading-relaxed max-w-2xl md:max-w-4xl mx-auto animate-fade-in-up">At RecruitMe, we connect talented individuals with leading companies. Our mission is to simplify the recruitment process for both job seekers and employers. Whether you're looking for a new opportunity or seeking top talent, we're here to help.</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-12 md:py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                    <div class="text-center">
+                        <img src="assets/images/job-search.svg" alt="Job Search" class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 animate-fade-in-up">
+                        <h3 class="text-xl font-semibold mb-2">Find Jobs</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Browse our extensive job listings to find the right opportunity for you.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                    <div class="text-center">
+                        <img src="assets/images/apply.svg" alt="Apply" class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 animate-fade-in-up">
+                        <h3 class="text-xl font-semibold mb-2">Apply</h3>
+                        <p class="text-gray-600 text-sm md:text-base">Submit your application directly through our platform.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                    <div class="text-center">
+                        <img src="assets/images/interview.svg" alt="Interview" class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 animate-fade-in-up">
+                        <h3 class="text-xl font-semibold mb-2">Get Hired</h3>
+                        <p class="text-gray-600 text-sm md:text-base">We'll connect you with employers for interviews and potential job offers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-10">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="bg-gray-100 p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                    <p class="text-gray-600 leading-relaxed mb-4 animate-fade-in-up">"RecruitMe made my job search so much easier! I found my dream job within a few weeks, and the application process was seamless."</p>
+                    <p class="text-blue-500 font-bold text-lg">- Emily Doe</p>
+                </div>
+                <div class="bg-gray-100 p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out">
+                    <p class="text-gray-600 leading-relaxed mb-4 animate-fade-in-up">"As a recruiter, I appreciate the simplicity of RecruitMe. It allows me to find qualified candidates quickly and efficiently."</p>
+                    <p class="text-blue-500 font-bold text-lg">- Michael Smith</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-12 md:py-16 bg-blue-500 text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start?</h2>
+            <p class="text-base md:text-lg mb-8">Join our community and discover the best career opportunities available.</p>
+            <a href="apply.html" class="bg-white text-blue-500 px-4 py-2 md:px-6 md:py-3 font-bold rounded-full hover:bg-blue-100 transition duration-300 ease-in-out">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow py-6 text-center mt-10">
+        <p class="text-gray-600">© 2024 RecruitMe - All Rights Reserved</p>
+    </footer>
+
+    <!-- Custom Animations -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+    </style>
+
+    <!-- JavaScript to toggle mobile menu -->
+    <script>
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
