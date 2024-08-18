@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css">
+  <style>
+    /* Hamburger Icon Animation */
+    .menu-icon {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-icon.open {
+        transform: rotate(45deg);
+    }
+
+    .line-1 {
+        transform-origin: top left;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .line-2 {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .line-3 {
+        transform-origin: bottom left;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .open .line-1 {
+        transform: rotate(45deg);
+    }
+
+    .open .line-2 {
+        opacity: 0;
+    }
+
+    .open .line-3 {
+        transform: rotate(-45deg);
+    }
+
+    /* Dropdown Animation */
+    .dropdown-menu {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .dropdown-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Social Media Icons */
+    .social-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #333;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #007bff;
+        transform: scale(1.1);
+    }
+
+    .social-icons i {
+        font-size: 1.5rem;
+    }
+
+    /* Form Animation */
+    .form-container {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Success Tick Animation */
+    .success-container {
+        display: none;
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .checkmark {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        background-color: #4CAF50;
+        border-radius: 50%;
+        animation: scaleUp 0.5s ease;
+    }
+
+    .checkmark::after {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 30px;
+        height: 50px;
+        border: solid white;
+        border-width: 0 8px 8px 0;
+        transform: rotate(45deg);
+        animation: drawTick 0.5s ease forwards;
+    }
+
+    @keyframes scaleUp {
+        from {
+            transform: scale(0);
+            opacity: 0;
+        }
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes drawTick {
+        from {
+            width: 0;
+            height: 0;
+        }
+        to {
+            width: 30px;
+            height: 50px;
+        }
+    }
+</style>
+</head>
+
+<body class="bg-gray-100">
+<!-- Navbar -->
+<nav class="bg-white shadow fixed w-full z-10 top-0">
+    <div class="container mx-auto px-6 py-3">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl md:text-3xl font-bold text-gray-800">RecruitMe</div>
+
+            <!-- Menu for larger screens -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out">Home</a>
+                <a href="jobs.html" class="text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out">Job Listings</a>
+                <a href="apply.html" class="text-gray-600 hover:text-blue-500 transition duration-300 ease-in-out">Apply Now</a>
+            </div>
+
+            <!-- Hamburger Icon for Mobile -->
+            <div class="md:hidden">
+                <button id="menu-button" class="focus:outline-none">
+                    <div class="space-y-1">
+                        <div class="w-6 h-1 bg-gray-800 line-1"></div>
+                        <div class="w-6 h-1 bg-gray-800 line-2"></div>
+                        <div class="w-6 h-1 bg-gray-800 line-3"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden dropdown-menu bg-white shadow-md">
+        <a href="index.html" class="block text-gray-600 py-2 px-4 hover:bg-blue-500 hover:text-white transition duration-300">Home</a>
+        <a href="jobs.html" class="block text-gray-600 py-2 px-4 hover:bg-blue-500 hover:text-white transition duration-300">Job Listings</a>
+        <a href="apply.html" class="block text-gray-600 py-2 px-4 hover:bg-blue-500 hover:text-white transition duration-300">Apply Now</a>
+    </div>
+</nav>
+
+<!-- Apply Now Section -->
+<section class="pt-20 pb-12">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Apply Now</h1>
+        <p class="text-gray-600 text-base md:text-lg mb-8">We’re excited to hear from you! Please fill out the application form below, and our team will get in touch with you soon.</p>
+
+        <!-- Application Form -->
+        <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg form-container">
+            <form id="application-form" action="#" method="POST">
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 font-semibold">Full Name</label>
+                        <input type="text" id="name" name="name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 font-semibold">Email Address</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone" class="block text-gray-700 font-semibold">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="resume" class="block text-gray-700 font-semibold">Upload Resume</label>
+                        <input type="file" id="resume" name="resume" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="cover-letter" class="block text-gray-700 font-semibold">Cover Letter</label>
+                        <textarea id="cover-letter" name="cover-letter" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required></textarea>
+                    </div>
+                    <div class="relative">
+                        <button type="submit" id="submit-button" class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Submit Application</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Success Tick Animation -->
+            <div id="success-container" class="success-container">
+                <div class="checkmark"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Media Section -->
+<section class="bg-gray-100 py-8">
+    <div class="container mx-auto text-center">
+        <p class="text-gray-600 mb-4">Follow us on social media for updates and job opportunities:</p>
+        <div class="social-icons">
+            <a href="#" class="text-gray-600 hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-600 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-600 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-gray-600 hover:text-red-600"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript to handle form submission and tick animation -->
+<script>
+    const form = document.getElementById('application-form');
+    const successContainer = document.getElementById('success-container');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission
+        
+        // Display success tick animation
+        successContainer.style.display = 'block';
+        form.reset();
+        
+        // Hide the success tick animation after 2 seconds
+        setTimeout(() => {
+            successContainer.style.display = 'none';
+        }, 2000);
+    });
+
+    // JavaScript for mobile menu toggle
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        menuButton.classList.toggle('open');
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('dropdown-active');
+    });
+</script>
+
+<!-- Font Awesome for Social Media Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-P4i7uIoBZp47j8z2BgnOdhGb6Ffjd5uUO0xvT1nvP0E3ZfhGvUDFgBphAoG5e1a9N1ZTJv4S+uw7oD/JgbF4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Footer -->
+  <footer class="bg-white shadow py-6 text-center mt-10">
+      <p class="text-gray-600">© 2024 RecruitMe - All Rights Reserved</p>
+  </footer>
+<!-- 
+  JavaScript to toggle mobile menu
+   <script>
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        menuButton.classList.toggle('open');
+        mobileMenu.classList.toggle('hidden');
+//         mobileMenu.classList.toggle('dropdown-active');
+//     });
+// </script> --> 
+</body>
+</html>
